@@ -95,7 +95,7 @@ export default function Home() {
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8 text-cyan-400">Çfarë Thonë Klientët</h2>
           <div className="bg-slate-800 p-6 rounded-xl shadow">
-            <p className="text-lg italic text-gray-300">"Faqja që na ndërtuan ishte më shumë se thjesht dizajn — ishte zgjidhje. E rekomandojmë pa hezitim!"</p>
+            <p className="text-lg italic text-gray-300">“Faqja që na ndërtuan ishte më shumë se thjesht dizajn — ishte zgjidhje. E rekomandojmë pa hezitim!”</p>
             <p className="mt-4 font-semibold text-white">— Arlind, sipërmarrës</p>
           </div>
         </motion.div>
