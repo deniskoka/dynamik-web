@@ -1,103 +1,117 @@
-import Image from "next/image";
+'use client';
+
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { Link as ScrollLink, Element } from 'react-scroll';
+import { Code2, ShoppingCart, LayoutDashboard } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="bg-slate-900 text-white font-sans">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-slate-800/80 backdrop-blur-md shadow">
+        <nav className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+          <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">DynamiK Web</span>
+          <ul className="flex space-x-6 text-sm font-medium">
+            <li><ScrollLink to="about" smooth={true} duration={500} className="cursor-pointer hover:text-cyan-300">Rreth Nesh</ScrollLink></li>
+            <li><ScrollLink to="services" smooth={true} duration={500} className="cursor-pointer hover:text-cyan-300">Shërbime</ScrollLink></li>
+            <li><ScrollLink to="portfolio" smooth={true} duration={500} className="cursor-pointer hover:text-cyan-300">Projektet</ScrollLink></li>
+            <li><ScrollLink to="testimonials" smooth={true} duration={500} className="cursor-pointer hover:text-cyan-300">Klientët</ScrollLink></li>
+            <li><ScrollLink to="contact" smooth={true} duration={500} className="cursor-pointer hover:text-cyan-300">Kontakt</ScrollLink></li>
+          </ul>
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-32 pb-20 relative bg-[url('/hero.jpg')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-black/60 z-0" />
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="z-10 max-w-2xl">
+          <h1 className="text-5xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Web që i jep jetë idesë tënde</h1>
+          <p className="text-xl text-gray-200 mt-4">
+            Ne ndërtojmë platforma që janë të shpejta, moderne dhe të përshtatura për çdo biznes që kërkon cilësi.
+          </p>
+          <ScrollLink to="contact" smooth={true} duration={500}>
+            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="mt-8 bg-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-cyan-600 transition">
+              Kontakto tani
+            </motion.button>
+          </ScrollLink>
+        </motion.div>
+      </section>
+
+      <Element name="about" className="py-28 px-6 bg-slate-800">
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6 text-cyan-400">Rreth Kompanisë</h2>
+          <p className="text-gray-300 text-lg leading-relaxed">
+            Jemi një ekip kreativ dhe i përkushtuar që zhvillon website dhe platforma për biznese moderne. Te DynamiK Web, ne besojmë se çdo ide meriton një prezencë dinjitoze online — and we make that happen.
+          </p>
+        </motion.div>
+      </Element>
+
+      <Element name="services" className="py-28 px-6 bg-slate-900">
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-10 text-cyan-400">Çfarë Ofrojmë</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <motion.div whileHover={{ scale: 1.03 }} className="bg-slate-800 p-6 rounded-xl shadow-md">
+              <Code2 className="h-10 w-10 mb-4 text-cyan-300" />
+              <h3 className="text-xl font-semibold mb-2">Website për Biznese</h3>
+              <p className="text-gray-300">Faqe të ndërtuara nga zero, të optimizuara për performancë dhe përshtatje me çdo pajisje.</p>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.03 }} className="bg-slate-800 p-6 rounded-xl shadow-md">
+              <ShoppingCart className="h-10 w-10 mb-4 text-cyan-300" />
+              <h3 className="text-xl font-semibold mb-2">Dyqane Online</h3>
+              <p className="text-gray-300">Zgjidhje të thjeshta dhe të sigurta për e-commerce me përvojë blerjeje intuitive.</p>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.03 }} className="bg-slate-800 p-6 rounded-xl shadow-md">
+              <LayoutDashboard className="h-10 w-10 mb-4 text-cyan-300" />
+              <h3 className="text-xl font-semibold mb-2">Landing Pages</h3>
+              <p className="text-gray-300">Faqe të fokusuara në një objektiv të vetëm — shitje, regjistrim ose kontakt.</p>
+            </motion.div>
+          </div>
+        </motion.div>
+      </Element>
+
+      <Element name="portfolio" className="py-28 px-6 bg-slate-800">
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-10 text-cyan-400">Projektet Tona</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <motion.div whileHover={{ scale: 1.02 }} className="bg-slate-900 rounded-lg p-4 shadow-md">
+              <Image src="/project1.jpg" alt="Projekt 1" width={400} height={250} className="rounded-md object-cover" />
+              <h3 className="text-xl font-semibold mt-4 text-white">Studio Arkitekture</h3>
+              <p className="text-gray-400">Dizajn elegant dhe përqendrim në prezantimin vizual të projekteve.</p>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.02 }} className="bg-slate-900 rounded-lg p-4 shadow-md">
+              <Image src="/project2.jpg" alt="Projekt 2" width={400} height={250} className="rounded-md object-cover" />
+              <h3 className="text-xl font-semibold mt-4 text-white">Platformë Trajnimesh</h3>
+              <p className="text-gray-400">Zgjidhje funksionale për menaxhimin e kurseve, përdoruesve dhe pagesave.</p>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.02 }} className="bg-slate-900 rounded-lg p-4 shadow-md">
+              <Image src="/project3.jpg" alt="Projekt 3" width={400} height={250} className="rounded-md object-cover" />
+              <h3 className="text-xl font-semibold mt-4 text-white">Portfolio Freelancer</h3>
+              <p className="text-gray-400">Faqe personale për krijues që duan të shfaqin punën me klas dhe stil.</p>
+            </motion.div>
+          </div>
+        </motion.div>
+      </Element>
+
+      <Element name="testimonials" className="py-28 px-6 bg-slate-900">
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-8 text-cyan-400">Çfarë Thonë Klientët</h2>
+          <div className="bg-slate-800 p-6 rounded-xl shadow">
+            <p className="text-lg italic text-gray-300">"Faqja që na ndërtuan ishte më shumë se thjesht dizajn — ishte zgjidhje. E rekomandojmë pa hezitim!"</p>
+            <p className="mt-4 font-semibold text-white">— Arlind, sipërmarrës</p>
+          </div>
+        </motion.div>
+      </Element>
+
+      <Element name="contact" className="py-28 px-6 bg-slate-800 text-center">
+        <h2 className="text-4xl font-bold mb-4 text-cyan-400">Na Kontakto</h2>
+        <p className="text-gray-300 mb-4">Gati për të nisur një projekt të ri? Ne jemi këtu për ta bërë realitetin të duket profesional.</p>
+        <p className="text-lg font-medium text-white">📧 denis.koka@fshnstudent.info</p>
+        <p className="text-lg font-medium text-white">📞 +355 69 454 1919</p>
+      </Element>
+
+      <footer className="py-6 text-center text-gray-400 text-sm border-t border-gray-700">
+        &copy; {new Date().getFullYear()} DynamiK Web. Krijuar në Shqipëri me përkushtim dhe kreativitet.
       </footer>
-    </div>
+    </main>
   );
 }
+
